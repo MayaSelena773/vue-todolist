@@ -26,7 +26,7 @@ var app = new Vue(
                 },
                 {
                     text: 'Fare la spesa',
-                    done: true
+                    done: false
                 },
                 {
                     text: 'Fare il bucato',
@@ -39,7 +39,13 @@ var app = new Vue(
             addNewTodo() {
                 if(this.newTodoText.length > 0) {
                     // Push nell'array newTodoText
-                    this.todos.push(this.newTodoText);
+                    this.todos.push(
+                        {
+                           text: this.newTodoText,
+                           done: false
+                        }
+                      );
+
                     this.newTodoText = '';
                 }
             },
@@ -53,3 +59,4 @@ var app = new Vue(
         }
     }
 );
+
