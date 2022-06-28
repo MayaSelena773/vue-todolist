@@ -26,7 +26,7 @@ var app = new Vue(
                 },
                 {
                     text: 'Fare la spesa',
-                    done: false
+                    done: true
                 },
                 {
                     text: 'Fare il bucato',
@@ -46,6 +46,10 @@ var app = new Vue(
             removeTodo(index) {
                 this.todos.splice(index, 1);
             }
+        },
+        toggleDone(todoIndex) {
+
+            this.todos[todoIndex].done = !this.todos[todoIndex].done;
         }
     }
 );
